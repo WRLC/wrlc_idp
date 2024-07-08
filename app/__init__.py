@@ -4,6 +4,7 @@ from flask_security import Security, SQLAlchemyUserDatastore, hash_password, uia
 from flask_saml2.utils import certificate_from_file, private_key_from_file
 from app.models.user import User
 from app.models.role import Role
+from app.models.username_util import UsernameUtil
 from app.models.institution import Institution
 from config import Config
 from app.extensions import db
@@ -22,7 +23,7 @@ def create_app(config_class=Config):
 
     # Setup Flask-Security
     user_datastore = SQLAlchemyUserDatastore(db, User, Role, None)
-    app.security = Security(app, user_datastore)
+    app.security = Security(app, user_datastore, username_util_cls=UsernameUtil)
     app.config['SECURITY_USER_IDENTITY_ATTRIBUTES'] = [
         {"username": {"mapper": uia_username_mapper, "case_insensitive": False}},
     ]
