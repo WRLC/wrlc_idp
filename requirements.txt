@@ -35,7 +35,7 @@ python-dotenv==1.0.1
 pytz==2024.1
 signxml==4.0.1
 six==1.16.0
-SQLAlchemy==2.0.29
+SQLAlchemy==2.0.33
 SQLAlchemy-Utils==0.41.2
 typing_extensions==4.11.0
 webencodings==0.5.1
