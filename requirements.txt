@@ -30,7 +30,7 @@ packaging==24.0
 passlib==1.7.4
 pycparser==2.22
 PyMySQL==1.1.1
-pyOpenSSL==24.1.0
+pyOpenSSL==24.2.1
 python-dotenv==1.0.1
 pytz==2024.1
 signxml==3.2.1
