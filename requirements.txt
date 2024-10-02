@@ -5,7 +5,7 @@ bcrypt==4.2.0
 bleach==6.1.0
 blinker==1.8.2
 certifi==2024.8.30
-cffi==1.17.0
+cffi==1.17.1
 click==8.1.7
 cryptography==43.0.1
 defusedxml==0.7.1
@@ -19,10 +19,10 @@ flask-saml2-fork @ git+https://github.com/WRLC/flask-saml2.git@635709e59f03269bb
 Flask-Security-Too==5.5.2
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.2.1
-greenlet==3.0.3
+greenlet==3.1.1
 gunicorn==23.0.0
 idna==3.8
-importlib_resources==6.4.4
+importlib_resources==6.4.5
 iso8601==2.1.0
 itsdangerous==2.2.0
 Jinja2==3.1.4
@@ -34,10 +34,10 @@ pycparser==2.22
 PyMySQL==1.1.1
 pyOpenSSL==24.2.1
 python-dotenv==1.0.1
-pytz==2024.1
-signxml==4.0.1
+pytz==2024.2
+signxml==4.0.2
 six==1.16.0
-SQLAlchemy==2.0.33
+SQLAlchemy==2.0.35
 SQLAlchemy-Utils==0.41.2
 typing_extensions==4.12.2
 webencodings==0.5.1
