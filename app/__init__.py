@@ -8,11 +8,8 @@ from app.models.username_util import UsernameUtil
 from app.models.institution import Institution
 from config import Config
 from app.extensions import db
-from dotenv import load_dotenv
 from datetime import datetime
 from flask_mailman import Mail
-
-load_dotenv()
 
 
 def create_app(config_class=Config):

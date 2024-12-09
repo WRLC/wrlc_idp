@@ -5,8 +5,44 @@ After=network.target
 [Service]
 User=wrlcidp
 Group=www-data
-WorkingDirectory=/usr/local/webapps/wrlc_idp
-Environment="PATH=/usr/local/webapps/wrlc_idp/venv/bin"
+WorkingDirectory=/path/to/wrlc_idp
+Environment="PATH=/path/to/venv/bin"
+Environment="SECRET_KEY="
+Environment="REMEMBER_COOKIE_SAMESITE=Strict"
+Environment="SESSION_COOKIE_SAMESITE=Strict"
+Environment="DEBUG=False"
+Environment="SERVER_NAME="
+Environment="LOG_DIR="app/log"
+Environment="SQLALCHEMY_DATABASE_URI="
+Environment="SECURITY_PASSWORD_SALT="
+Environment="SECURITY_RECOVERABLE=True"
+Environment="SECURITY_CHANGEABLE=True"
+Environment="SECURITY_REGISTERABLE=False"
+Environment="SECURITY_TRACKABLE=True"
+Environment="SECURITY_USERNAME_ENABLE=True"
+Environment="SECURITY_USERNAME_REQUIRED=True"
+Environment="MAIL_SERVER=127.0.0.1"
+Environment="MAIL_PORT=25"
+Environment="SECURITY_EMAIL_SUBJECT_PASSWORD_RESET=[WRLC Identity Services] Password reset instructions"
+Environment="SECURITY_EMAIL_SUBJECT_PASSWORD_NOTICE=[WRLC Identity Services] Your password has been reset"
+Environment="SECURITY_EMAIL_SUBJECT_PASSWORD_CHANGE_NOTICE=[WRLC Identity Services] Your password has been changed"
+Environment="SAML2_IDP_CERTIFICATE="
+Environment="SAML2_IDP_PRIVATE_KEY="
+Environment="SAML2_SP_DISPLAY_NAME="
+Environment="SAML2_SP_ENTITY_ID="
+Environment="SAML2_SP_ACS_URL="
+Environment="SAML2_SP_CERTIFICATE="
+Environment="ADMIN_EMAIL="
+Environment="ADMIN_USERNAME="
+Environment="ADMIN_PASSWORD="
+Environment="ADMIN_FIRST_NAME="
+Environment="ADMIN_LAST_NAME="
+Environment="ADMIN_INST_CODE="
+Environment="ADMIN_INST_NAME="
+Environment="ADMIN_ROLE=admin"
+Environment="ADMIN_ROLE_DESCRIPTION=Administrator - view/edit all accounts, roles, and institutions"
+Environment="USER_ROLE=user"
+Environment="USER_ROLE_DESCRIPTION=User - view/edit own account"
 ExecStart=/usr/local/webapps/wrlc_idp/venv/bin/gunicorn --workers 3 --bind unix:wrlc-idp.sock -m 007 wsgi:app
 ExecStart=
 
