@@ -12,8 +12,8 @@ services:
       - "traefik.http.routers.wridp.entrypoints=websecure"
     environment:
       SECRET_KEY: "thisisasecretkey"
-      REMEMBER_COOKIE_SAMESITE: "True"
-      SESSION_COOKIE_SAMESITE: "True"
+      REMEMBER_COOKIE_SAMESITE: "Lax"
+      SESSION_COOKIE_SAMESITE: "Lax"
       DEBUG: "True"
       SERVER_NAME: "idp.wrlc.localhost"
       LOG_DIR: 'app/log'
@@ -43,7 +43,7 @@ services:
       ADMIN_FIRST_NAME: "Enoch"
       ADMIN_LAST_NAME: "Root"
       ADMIN_INST_CODE: "wr"
-      ADMIN_INST_NAME: "certs/sp/saml.crt"
+      ADMIN_INST_NAME: "Washington Research Library Consortium"
       ADMIN_ROLE: "admin"
       ADMIN_ROLE_DESCRIPTION: "Administrator - view/edit all accounts, roles, and institutions"
       USER_ROLE: "user"
