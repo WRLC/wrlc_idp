@@ -1,6 +1,7 @@
 services:
   wridp:
     build: .
+    container_name: wridp
     volumes:
       - .:/app
     working_dir: /app
@@ -9,6 +10,47 @@ services:
       - "traefik.http.routers.wridp.rule=Host(`idp.wrlc.localhost`)"
       - "traefik.http.routers.wridp.tls=true"
       - "traefik.http.routers.wridp.entrypoints=websecure"
+    environment:
+      SECRET_KEY: "thisisasecretkey"
+      REMEMBER_COOKIE_SAMESITE: "Lax"
+      SESSION_COOKIE_SAMESITE: "Lax"
+      DEBUG: "True"
+      SERVER_NAME: "idp.wrlc.localhost"
+      LOG_DIR: 'app/log'
+      SQLALCHEMY_DATABASE_URI: "mysql+pymysql://user:password@wridp_db:3306/wridp"
+      SECURITY_PASSWORD_SALT: "285847462263163056608721124003358992599"
+      SECURITY_RECOVERABLE: "True"
+      SECURITY_CHANGEABLE: "True"
+      SECURITY_REGISTERABLE: "False"
+      SECURITY_TRACKABLE: "True"
+      SECURITY_USERNAME_ENABLE: "True"
+      SECURITY_USERNAME_REQUIRED: "True"
+      MAIL_SERVER: "127.0.0.1"
+      MAIL_PORT: 25
+      SECURITY_EMAIL_SENDER: "no-reply@wrlc.org"
+      SECURITY_EMAIL_SUBJECT_PASSWORD_RESET: "[WRLC Identity Services] Password reset instructions"
+      SECURITY_EMAIL_SUBJECT_PASSWORD_NOTICE: "[WRLC Identity Services] Your password has been reset"
+      SECURITY_EMAIL_SUBJECT_PASSWORD_CHANGE_NOTICE: "[WRLC Identity Services] Your password has been changed"
+      SAML2_IDP_CERTIFICATE: "certs/idp/idp.crt"
+      SAML2_IDP_PRIVATE_KEY: "certs/idp/idp.key"
+      SAML2_SP_DISPLAY_NAME: "Aladin-SP"
+      SAML2_SP_ENTITY_ID: "https://simplesamlphp.wrlc.localhost/shibboleth"
+      SAML2_SP_ACS_URL: "https://simplesamlphp.wrlc.localhost/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp"
+      SAML2_SP_CERTIFICATE: "certs/sp/saml.crt"
+      ADMIN_EMAIL: "webmaster@wrlc.org"
+      ADMIN_USERNAME: "root"
+      ADMIN_PASSWORD: "averysecretpassword"
+      ADMIN_FIRST_NAME: "Enoch"
+      ADMIN_LAST_NAME: "Root"
+      ADMIN_INST_CODE: "wr"
+      ADMIN_INST_NAME: "Washington Research Library Consortium"
+      ADMIN_ROLE: "admin"
+      ADMIN_ROLE_DESCRIPTION: "Administrator - view/edit all accounts, roles, and institutions"
+      USER_ROLE: "user"
+      USER_ROLE_DESCRIPTION: "User - view/edit own account"
+    secrets:
+      - ssh_key
+      - gitconfig
     depends_on:
       - wridp_db
     networks:
@@ -27,6 +69,12 @@ services:
       - mysql-data:/var/lib/mysql
     networks:
       - proxy
+
+secrets:
+  ssh_key:
+    file: ${SSH_KEY_FILE}
+  gitconfig:
+    file: ${GITCONFIG}
 
 volumes:
     mysql-data:
