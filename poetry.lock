@@ -997,13 +997,13 @@ files = [
 
 [[package]]
 name = "signxml"
-version = "4.0.2"
+version = "4.0.3"
 description = "Python XML Signature and XAdES library"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "signxml-4.0.2-py3-none-any.whl", hash = "sha256:d7402fcf4153454ee90ed38c0bdbfbc384a83d5ee61a8c2c78ad21899ac200b2"},
-    {file = "signxml-4.0.2.tar.gz", hash = "sha256:65563053488073aa38681eb6ec49607b931c73f18dff1dbe38f59c772696e6b0"},
+    {file = "signxml-4.0.3-py3-none-any.whl", hash = "sha256:a220da40c28b7cdff8b15fe2552374fde282928cb7f097d6b556819b3620ca80"},
+    {file = "signxml-4.0.3.tar.gz", hash = "sha256:113264176bfe5597b8e3ebf01d37e06f02827b284952e956e7f22efa02f66634"},
 ]
 
 [package.dependencies]
