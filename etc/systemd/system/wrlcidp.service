@@ -44,7 +44,6 @@ Environment="ADMIN_ROLE_DESCRIPTION=Administrator - view/edit all accounts, role
 Environment="USER_ROLE=user"
 Environment="USER_ROLE_DESCRIPTION=User - view/edit own account"
 ExecStart=/usr/local/webapps/wrlc_idp/venv/bin/gunicorn --workers 3 --bind unix:wrlc-idp.sock -m 007 wsgi:app
-ExecStart=
 
 [Install]
 WantedBy=multi-user.target
