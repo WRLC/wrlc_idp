@@ -36,7 +36,7 @@ pyOpenSSL==24.3.0
 pytz==2024.2
 signxml==4.0.3
 six==1.17.0
-SQLAlchemy==2.0.36
+SQLAlchemy==2.0.37
 SQLAlchemy-Utils==0.41.2
 typing_extensions==4.12.2
 webencodings==0.5.1
