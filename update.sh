@@ -2,7 +2,14 @@
 
 # Ensure you are on the correct branch or create one
 # For example:
-git checkout -b update/$(date +%Y-%m-%d)
+BRANCH_NAME="update/$(date +%Y-%m-%d)"
+if git rev-parse --verify "$BRANCH_NAME" >/dev/null 2>&1; then
+  echo "Switching to existing branch $BRANCH_NAME."
+  git checkout "$BRANCH_NAME"
+else
+  echo "Creating and switching to new branch $BRANCH_NAME."
+  git checkout -b "$BRANCH_NAME"
+fi
 
 # Get outdated packages, excluding the header and formatting lines
 outdated_packages=$(poetry show --outdated | awk 'NR > 2 && NF > 0 {print $1}')
@@ -29,19 +36,26 @@ for package_name in $outdated_packages; do
   echo "Updating requirements.txt..."
   poetry run pip freeze > requirements.txt
 
-  echo "Committing changes for $package_name..."
+  echo "Staging changes for $package_name..."
   git add pyproject.toml poetry.lock requirements.txt
-  git commit -m "Update $package_name"
 
-  if [ $? -ne 0 ]; then
-    echo "Error committing changes for $package_name. Please check git status."
-    exit 1
+  # Check if there are any staged changes before committing
+  if ! git diff --staged --quiet; then
+    echo "Committing changes for $package_name..."
+    git commit -m "Update $package_name"
+
+    if [ $? -ne 0 ]; then
+      echo "Error committing changes for $package_name. Please check git status."
+      exit 1
+    fi
+    echo "$package_name updated and committed."
+  else
+    echo "No changes to commit for $package_name."
   fi
-
-  echo "$package_name updated and committed."
   echo ""
 done
 
 echo "All packages updated."
 # You can add your git push command here if desired
-git push -u origin update/$(date +%Y-%m-%d)
+# Ensure you are pushing the correct branch name
+# git push -u origin "$BRANCH_NAME"
