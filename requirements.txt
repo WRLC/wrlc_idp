@@ -16,7 +16,7 @@ Flask-Login==0.6.3
 Flask-Mailman==1.1.1
 Flask-Principal==0.4.0
 flask-saml2-fork @ git+https://github.com/WRLC/flask-saml2.git@635709e59f03269bbe31bf624f028454895c48f1
-Flask-Security-Too==5.6.1
+Flask-Security-Too==5.6.2
 Flask-SQLAlchemy==3.1.1
 Flask-WTF==1.2.2
 greenlet==3.1.1
