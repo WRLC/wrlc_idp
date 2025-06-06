@@ -49,6 +49,8 @@ werkzeug = "^3.1.2"
 wtforms = "^3.2.1"
 flask-saml2-fork = {git = "https://github.com/WRLC/flask-saml2.git", rev = "635709e59f03269bbe31bf624f028454895c48f1"}
 
+[tool.poetry.requires-plugins]
+poetry-plugin-export = ">=1.8"
 
 [build-system]
 requires = ["poetry-core"]
