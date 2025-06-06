@@ -13,7 +13,7 @@ blinker = "^1.8.2"
 certifi = "^2025.1.31"
 cffi = "^1.17.1"
 click = "^8.1.7"
-cryptography = "^44.0.0"
+cryptography = "^45.0.0"
 defusedxml = "^0.7.1"
 dnspython = "^2.7.0"
 email-validator = "^2.2.0"
@@ -49,6 +49,8 @@ werkzeug = "^3.1.2"
 wtforms = "^3.2.1"
 flask-saml2-fork = {git = "https://github.com/WRLC/flask-saml2.git", rev = "635709e59f03269bbe31bf624f028454895c48f1"}
 
+[tool.poetry.requires-plugins]
+poetry-plugin-export = ">=1.8"
 
 [build-system]
 requires = ["poetry-core"]
