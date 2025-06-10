@@ -1,5 +1,5 @@
 argon2-cffi-bindings==21.2.0 ; python_version >= "3.11" and python_version < "4.0"
-argon2-cffi==23.1.0 ; python_version >= "3.11" and python_version < "4.0"
+argon2-cffi==25.1.0 ; python_version >= "3.11" and python_version < "4.0"
 attrs==25.3.0 ; python_version >= "3.11" and python_version < "4.0"
 bcrypt==4.3.0 ; python_version >= "3.11" and python_version < "4.0"
 bleach==6.2.0 ; python_version >= "3.11" and python_version < "4.0"
