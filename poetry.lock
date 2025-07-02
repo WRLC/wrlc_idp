@@ -1084,14 +1084,14 @@ type = ["importlib_metadata (>=7.0.2) ; python_version < \"3.10\"", "jaraco.deve
 
 [[package]]
 name = "signxml"
-version = "4.0.5"
+version = "4.1.0"
 description = "Python XML Signature and XAdES library"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "signxml-4.0.5-py3-none-any.whl", hash = "sha256:4fe8d1b7dd348882559c57344c6041b3b8d080e814ce4e53576ab4eb03a4f707"},
-    {file = "signxml-4.0.5.tar.gz", hash = "sha256:7e783299f85206538d7115ffdc8cb704f48d1ed3e066378f783d5fc251e24a5d"},
+    {file = "signxml-4.1.0-py3-none-any.whl", hash = "sha256:bf612a3b7e7f81b68cdb823c0ddc46269ace5cf1fe3a36682ddfa919d4eaccf7"},
+    {file = "signxml-4.1.0.tar.gz", hash = "sha256:3e3c28f8d1dc4312317b786dd909e785a57341a19e7c173258fbb67cdc6bf4e9"},
 ]
 
 [package.dependencies]
