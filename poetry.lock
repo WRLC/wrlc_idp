@@ -1105,20 +1105,20 @@ type = ["importlib_metadata (>=7.0.2) ; python_version < \"3.10\"", "jaraco.deve
 
 [[package]]
 name = "signxml"
-version = "4.1.0"
+version = "4.2.0"
 description = "Python XML Signature and XAdES library"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "signxml-4.1.0-py3-none-any.whl", hash = "sha256:bf612a3b7e7f81b68cdb823c0ddc46269ace5cf1fe3a36682ddfa919d4eaccf7"},
-    {file = "signxml-4.1.0.tar.gz", hash = "sha256:3e3c28f8d1dc4312317b786dd909e785a57341a19e7c173258fbb67cdc6bf4e9"},
+    {file = "signxml-4.2.0-py3-none-any.whl", hash = "sha256:ac66cbf8d52adaaba2dbeb734ca5a9c85177dc1558fad1255340b52d144f14b5"},
+    {file = "signxml-4.2.0.tar.gz", hash = "sha256:5317b71f682d6b9ebd4a827d564eb43fe8f6edf98030fc30eb629621045441c6"},
 ]
 
 [package.dependencies]
 certifi = ">=2023.11.17"
 cryptography = ">=43"
-lxml = ">=5.2.1,<6"
+lxml = ">=5.2.1,<7"
 
 [package.extras]
 test = ["build", "coverage", "lxml-stubs", "mypy", "ruff", "wheel"]
@@ -1323,4 +1323,4 @@ email = ["email-validator"]
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.11"
-content-hash = "e40c247dd6c882c3dc25a529eb0ec00699eab1cad10cb7ef53d35c7ca0c2f1fb"
+content-hash = "eebe5640be93bd31ab29752f92ad4ef5c8603e5508cd9fbfa53f23c4e470dc6f"
